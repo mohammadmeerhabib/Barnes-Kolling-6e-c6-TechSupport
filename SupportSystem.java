@@ -8,15 +8,17 @@
 public class SupportSystem
 {
     // instance variables - replace the example below with your own
-    private int x;
-
+    InputReader reader;    
+    Responder responder;
     /**
      * Constructor for objects of class SupportSystem
      */
     public SupportSystem()
     {
         // initialise instance variables
-        x = 0;
+        reader = new InputReader();
+        responder = new Responder();
+        
     }
 
     /**
@@ -25,5 +27,9 @@ public class SupportSystem
      * @param  y  a sample parameter for a method
      * @return    the sum of x and y
      */
-     
+    public void support()
+    {
+        reader.getInput();
+        System.out.println(responder.generateResponse());
+    }
 }
