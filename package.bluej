@@ -1,9 +1,9 @@
 #BlueJ package file
 dependency1.from=SupportSystem
-dependency1.to=InputReader
+dependency1.to=Responder
 dependency1.type=UsesDependency
 dependency2.from=SupportSystem
-dependency2.to=Responder
+dependency2.to=InputReader
 dependency2.type=UsesDependency
 editor.fx.0.height=737
 editor.fx.0.width=814
