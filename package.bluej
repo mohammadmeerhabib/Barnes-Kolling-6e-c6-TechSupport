@@ -1,7 +1,13 @@
 #BlueJ package file
+dependency1.from=SupportSystem
+dependency1.to=InputReader
+dependency1.type=UsesDependency
+dependency2.from=SupportSystem
+dependency2.to=Responder
+dependency2.type=UsesDependency
 editor.fx.0.height=737
 editor.fx.0.width=814
-editor.fx.0.x=58
+editor.fx.0.x=676
 editor.fx.0.y=0
 objectbench.height=92
 objectbench.width=451
@@ -13,7 +19,7 @@ package.editor.x=672
 package.editor.y=44
 package.frame.height=600
 package.frame.width=800
-package.numDependencies=0
+package.numDependencies=2
 package.numTargets=3
 package.showExtends=true
 package.showUses=true

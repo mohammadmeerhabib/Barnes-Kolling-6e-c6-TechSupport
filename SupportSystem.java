@@ -22,14 +22,40 @@ public class SupportSystem
     }
 
     /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * start to run support system, takes input via input reader and generates response 
+     * via Responder
+     * @param none
+     * @return none
      */
-    public void support()
+    public void start()
     {
-        reader.getInput();
-        System.out.println(responder.generateResponse());
+        boolean finished = false;
+        printWelcome();
+        while (!finished){
+            String input = reader.getInput().trim().toLowerCase();
+            if (input.startsWith("bye")){
+                finished = true;
+                printGoodbye();
+            } else {
+            System.out.println(responder.generateResponse());
+            }
+        }
+    }
+    /**
+     * prints welcome message
+     * @param none
+     * @return none
+     */
+    public void printWelcome()
+    {
+        System.out.println("Welcome to Technical Support System." );
+        System.out.println();
+        System.out.println("Please tell us about your problem.");
+        System.out.println("We will assist you with any problem you might have.");
+        System.out.println("Please type 'bye' to exit our system.");
+    }
+    public void printGoodbye()
+    {
+        System.out.println("Nice talking to you. Bye...");
     }
 }
