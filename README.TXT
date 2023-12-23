@@ -5,7 +5,8 @@ all they need to know. The comments should usually include at least:
 ------------------------------------------------------------------------
 
 PROJECT TITLE:my-tech-support
-PURPOSE OF PROJECT:Learning Chapter 6, edition Barnes and Kolling objects first
+PURPOSE OF PROJECT:Learning Chapter 6, Edition 6, Barnes and Kolling Objects first with java.
+A practical introduction using blueJ.
 VERSION or DATE:20231223
 HOW TO START THIS PROJECT:
 AUTHORS:M M Habib
