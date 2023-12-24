@@ -1,9 +1,10 @@
+import java.util.HashSet;
 /**
  * reads via reader and outputs response via responder
  */
 public class SupportSystem
 {
-    private Responder responder;
+    //private Responder responder;
     private InputReader reader;
     /**
      * constructs responders as an instance of class Responder and 
@@ -12,7 +13,7 @@ public class SupportSystem
     public SupportSystem()
     {
         reader = new InputReader();
-        responder = new Responder();
+        //responder = new Responder();
     }
     /**
      * start method starts the process and takes input via input reader and
@@ -25,15 +26,18 @@ public class SupportSystem
         printWelcome();
         boolean flag = false;
         while (!flag) {
-            String input = reader.getInput().trim().toLowerCase();
-            if (input.startsWith("bye")) {
-                flag = true;
+            HashSet<String> input = new HashSet<>();
+            input = reader.getInput();
+                        if (input.contains("bye")) {
+               flag = true;
             } else {
+                Responder responder = new Responder();
                 System.out.println(responder.generateResponse(input));
             }
+            input.clear();
         }
         printGoodbye();
-    }
+            }
     
     /*
      * printWelcome prints welcome message

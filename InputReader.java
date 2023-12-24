@@ -1,4 +1,7 @@
 import java.util.Scanner;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Arrays;
 /**
  * Write a description of class InputReader here.
  *
@@ -9,6 +12,8 @@ public class InputReader
 {
     // instance variables - replace the example below with your own
     private Scanner reader;
+    private HashSet<String> input;
+   
 
     /**
      * Constructor for objects of class InputReader
@@ -17,6 +22,7 @@ public class InputReader
     {
         // initialise instance variables
         reader = new Scanner(System.in);
+        input = new HashSet<>();
     }
 
     /**
@@ -25,9 +31,15 @@ public class InputReader
      * @param  y  a sample parameter for a method
      * @return    the sum of x and y
      */
-    public String getInput()
+    public HashSet getInput()
     {
         System.out.println(">");
-        return reader.nextLine();
+        String inputString = reader.nextLine().trim().toLowerCase();
+        String[] words = inputString.split(" ");
+        for (String str : words) {
+            input.add(str);
+        }
+        return input;
     }
+    
 }

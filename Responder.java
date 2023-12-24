@@ -1,6 +1,8 @@
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
 /**
  * Write a description of class Responder here.
  *
@@ -31,13 +33,21 @@ public class Responder
      * @param  y  a sample parameter for a method
      * @return    the sum of x and y
      */
-    public String generateResponse(String input)
+    public String generateResponse(HashSet input)
     {
-        String response = responseMap.get(input);
-        if (response != null) {
-            return response;
+        Iterator<String> it = input.iterator();
+        //boolean responded = false;
+        String response = null;
+        while (it.hasNext() && response == null) {
+            response = responseMap.get(it.next());
+            /*if (response != null) {
+                responded = true;
+            }*/
+        }
+        if (response == null) {
+            return responses.get(randomGenerator.nextInt(responses.size()));
         } else {
-        return responses.get(randomGenerator.nextInt(responses.size()));
+            return response;
         }
     }
     public void listResponses()
