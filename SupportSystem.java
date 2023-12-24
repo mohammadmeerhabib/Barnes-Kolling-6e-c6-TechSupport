@@ -29,7 +29,7 @@ public class SupportSystem
             if (input.startsWith("bye")) {
                 flag = true;
             } else {
-                System.out.println(responder.generateResponse());
+                System.out.println(responder.generateResponse(input));
             }
         }
         printGoodbye();
