@@ -88,4 +88,13 @@ public class Responder
         responseMap.put("pricey", "All our products are competitively priced. \n" + 
         "Our products have exceptional quality at reasonable prices");
     }
+    /**
+     * containsKey method checks for the presence of parameter key
+     * @param key
+     * @return boolean true if present
+     */
+    public boolean containsKey(String key)
+    {
+        return responseMap.containsKey(key);
+    }
 }

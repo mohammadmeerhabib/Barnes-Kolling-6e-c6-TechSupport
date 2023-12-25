@@ -11,7 +11,7 @@ public class WordCounter
 {
     // instance variables - replace the example below with your own
     private HashMap<String, Integer> counter;
-
+    private Responder responder;
     /**
      * Constructor for objects of class WordCounter
      */
@@ -19,6 +19,7 @@ public class WordCounter
     {
         // initialise instance variables
         counter = new HashMap<>();
+        responder = new Responder();
     }
 
     /**
@@ -43,7 +44,9 @@ public class WordCounter
     {
         for (String name : counter.keySet()) {
             Integer value = counter.get(name);
-            System.out.println(name + " : " + value);
+            if (!responder.containsKey(name)){
+                System.out.println(name + " : " + value);
+            }
         }
     }
 }
