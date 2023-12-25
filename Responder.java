@@ -4,10 +4,13 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 /**
- * Write a description of class Responder here.
- *
- * @author (your name)
- * @version (a version number or a date)
+ * Responsder class does following
+ * 1 creates a list of random reponses in ArrayList responses.
+ * 2 creates a map of responses to commonly used words in HashMap responseMap
+ * 3 accetps input and checks it against responseMap and responds if there is a match.
+ * 4 if no match in responseMap than generates a random answer from responses.
+ * @author M M Habib
+ * @version 20231225
  */
 public class Responder
 {
@@ -16,7 +19,10 @@ public class Responder
     public ArrayList<String> responses;
     public HashMap<String, String> responseMap;
     /**
-     * Constructor for objects of class Responder
+     * Constructor instantiates objects of class Random, ArrayList and HashMap.
+     * Also calls methods listResponses and fillResponseMap.
+     * @param none
+     * @return none
      */
     public Responder()
     {
@@ -28,10 +34,10 @@ public class Responder
     }
 
     /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * generateResponse checks input against responseMap and returns if associated value.
+     * Otherwise it returns a ransom response.
+     * @param HashSet
+     * @return String
      */
     public String generateResponse(HashSet input)
     {
@@ -56,6 +62,12 @@ public class Responder
             return response;
         }
     }
+    /**
+     * listResponses populates responses (ArrayList) with commond words as keys and values 
+     * as response
+     * @param none
+     * @return none
+     */
     public void listResponses()
     {
         responses.add("That sounds odd. Could you explain a bit more please?");
@@ -69,7 +81,8 @@ public class Responder
         responses.add("Where did you purchase the system?");
     }
     /**
-     * creates response map
+     * fillResponseMap populates responseMap with common words as keys and associated
+     * response as values.
      * @param none
      * return none
      */

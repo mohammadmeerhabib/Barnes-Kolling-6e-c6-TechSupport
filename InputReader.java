@@ -3,10 +3,10 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Arrays;
 /**
- * Write a description of class InputReader here.
- *
- * @author (your name)
- * @version (a version number or a date)
+ * InputReader object scans input, trims it, converts to lower case and stores in 
+ * a HashSet which is returned.
+ * @author M M Habib
+ * @version 20231225
  */
 public class InputReader
 {
@@ -16,7 +16,7 @@ public class InputReader
    
 
     /**
-     * Constructor for objects of class InputReader
+     * Constructor instantiates a Scanner object and a HashSet object.
      */
     public InputReader()
     {
@@ -26,10 +26,10 @@ public class InputReader
     }
 
     /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * getInput reads a line of input, trims and converts to lowercase.
+     * Line is split in words and stored in HashSet.
+     * @param none
+     * @return HashSet
      */
     public HashSet getInput()
     {

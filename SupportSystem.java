@@ -1,23 +1,36 @@
 import java.util.HashSet;
 /**
- * reads via reader and outputs response via responder
+ * SupportSystem controls tech support system
+ * communicates with user, accepts input via reader and outputs response via responder and 
+ * prints inputted word statistics for managers
+ * @author M M Habib
+ * @version 1
  */
 public class SupportSystem
 {
-    //private Responder responder;
+    private WordCounter counter;
     private InputReader reader;
+    private Responder responder;
     /**
-     * constructs responders as an instance of class Responder and 
-     * reader as an instance of class InputReader
+     * Constructor creates reader as an instance of class InputReader. Also creates counter as
+     * an instance of WordCounter. Creating counter in the constructor
+     * keeps track of word count over multiple starts after a single instantiation.
+     * also instantiates object responder (Responder).
+     * @param none
+     * @return none
      */    
     public SupportSystem()
     {
         reader = new InputReader();
-        //responder = new Responder();
+        counter = new WordCounter();
+        responder = new Responder();
     }
     /**
-     * start method starts the process and takes input via input reader and
-     * generates a response via responder.
+     * start method starts the process, prints welcom message and how to quit.
+     * takes input via input reader and generates a response via responder.
+     * prints exit message
+     * calls counter after exit message to print frequency of words used other than
+     * words already been used in map.
      * @param none
      * @return none
      */
@@ -25,7 +38,8 @@ public class SupportSystem
     {
         printWelcome();
         boolean flag = false;
-        WordCounter counter = new WordCounter();
+        //WordCounter counter = new WordCounter();//can be initiated here to loose previous
+        //info after each start.
         while (!flag) {
             HashSet<String> input = new HashSet<>();
             input = reader.getInput();
@@ -33,7 +47,7 @@ public class SupportSystem
                         if (input.contains("bye")) {
                flag = true;
             } else {
-                Responder responder = new Responder();
+                //Responder responder = new Responder();
                 System.out.println(responder.generateResponse(input));
             }
             input.clear();
@@ -42,7 +56,7 @@ public class SupportSystem
         counter.printWords();
             }
     
-    /*
+    /**
      * printWelcome prints welcome message
      * @param none
      * @return none
@@ -57,7 +71,7 @@ public class SupportSystem
     }
     
     /**
-     * print goodBye prints goodbye message.
+     * printGoodBye prints goodbye message.
      * @param none
      * @return none
      */

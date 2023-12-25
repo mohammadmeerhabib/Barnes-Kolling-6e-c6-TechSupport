@@ -2,18 +2,18 @@ import java.util.HashSet;
 import java.util.HashMap;
 import java.util.Iterator;
 /**
- * Write a description of class WordCounter here.
- *
- * @author (your name)
- * @version (a version number or a date)
+ * WordCounter object takes a HashSet of words and stores them as keys in a HashMap.
+ * Corresponding value in HashMap is number of times the word is used.
+ * @author M M Habib
+ * @version 20231225
  */
 public class WordCounter
 {
-    // instance variables - replace the example below with your own
-    private HashMap<String, Integer> counter;
+        private HashMap<String, Integer> counter;
     private Responder responder;
     /**
-     * Constructor for objects of class WordCounter
+     * Constructor makes an instance of HashMap to store keys and frequency.
+     * Makes a instance of Responder to check if word is associated with an answer already.
      */
     public WordCounter()
     {
@@ -23,10 +23,10 @@ public class WordCounter
     }
 
     /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * addWords accepts HashSet and adds them to a HashMap.
+     * Value is increased everytime a word is repeated
+     * @param HashSet
+     * @return none
      */
     public void addWords(HashSet input)
     {
@@ -38,7 +38,10 @@ public class WordCounter
         }
     }
     /**
-     * prints words with frequency. called after goodbye message.
+     * printWords prints only those words and their frequency which are not already 
+     * associated with an answer
+     * @param none
+     * @return none
      */
     public void printWords()
     {
