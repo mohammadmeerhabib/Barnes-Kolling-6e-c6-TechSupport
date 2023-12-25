@@ -25,9 +25,11 @@ public class SupportSystem
     {
         printWelcome();
         boolean flag = false;
+        WordCounter counter = new WordCounter();
         while (!flag) {
             HashSet<String> input = new HashSet<>();
             input = reader.getInput();
+            counter.addWords(input);
                         if (input.contains("bye")) {
                flag = true;
             } else {
@@ -37,6 +39,7 @@ public class SupportSystem
             input.clear();
         }
         printGoodbye();
+        counter.printWords();
             }
     
     /*

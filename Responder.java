@@ -45,7 +45,13 @@ public class Responder
             }*/
         }
         if (response == null) {
-            return responses.get(randomGenerator.nextInt(responses.size()));
+            int lastNum = 0;
+            int randNum = 0 ;
+            while (randNum == lastNum) {
+                randNum = randomGenerator.nextInt(responses.size());
+            }
+            lastNum = randNum;
+            return responses.get(randNum);
         } else {
             return response;
         }
@@ -71,9 +77,15 @@ public class Responder
     {
         responseMap.put("slow", "This issue is related to hardware \n" +
         "Upgrading your computer will help.");
+        responseMap.put("sluggish", "This issue is related to hardware \n" +
+        "Upgrading your computer will help.");
         responseMap.put("bug", "All software can have bugs!\n" + 
         "Our engineers are working on it.");
         responseMap.put("expensive", "All our products are competitively priced. \n" + 
+        "Our products have exceptional quality at reasonable prices");
+        responseMap.put("costly", "All our products are competitively priced. \n" + 
+        "Our products have exceptional quality at reasonable prices");
+        responseMap.put("pricey", "All our products are competitively priced. \n" + 
         "Our products have exceptional quality at reasonable prices");
     }
 }
