@@ -8,6 +8,7 @@ import java.util.HashSet;
  */
 public class SupportSystem
 {
+    private static int instances =0;
     private WordCounter counter;
     private InputReader reader;
     private Responder responder;
@@ -21,9 +22,35 @@ public class SupportSystem
      */    
     public SupportSystem()
     {
+        instances++;
         reader = new InputReader();
         counter = new WordCounter();
         responder = new Responder();
+    }
+    /**
+     * numberOfInstances method keeps count of instances created
+     * @param none
+     * @return int
+     */
+    public static int numberOfInstances()
+    {
+        return instances;
+    }
+    /**
+     * main method
+     */
+    public static void main(String[] args)
+    {
+        SupportSystem supportSystem = new SupportSystem();
+        supportSystem.start();
+    }
+    /**
+     * instances method show total instances
+     */
+    public int instances()
+    {
+        int instances = numberOfInstances();
+        return instances;
     }
     /**
      * start method starts the process, prints welcom message and how to quit.
